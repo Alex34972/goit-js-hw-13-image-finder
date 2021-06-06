@@ -1,23 +1,28 @@
-import templeCard from '../templates/card-images.hbs';
+
 import templGallery from '../templates/gallery-images.hbs';
-import IMAGE from './apiService';
+import ImagesApiService from './apiService';
 
 const refs = {
     input:document.querySelector(".search-form"),
-    galleryMap:document.querySelector(".gallery")
+    galleryMap:document.querySelector(".gallery"),
+    loadMorBtn:document.querySelector(".load-more")
 }
+const imagesApiService = new ImagesApiService();
+
 let debounce = require('lodash.debounce');
-refs.input.addEventListener(`input`,debounce(onSearch,500));
+refs.input.addEventListener(`input`,debounce(onSearch,1000));
+refs.loadMorBtn.addEventListener(`click`,onLoadMore);
+
 function onSearch(e) {
     e.preventDefault();
-    const images = e.target.value.trim();
-    console.log(images)
-    if (isNaN(images) === true) {
-        IMAGE.fetchImages(images)
-      .then(renderGallery)
-    }
+    imagesApiService.query = e.target.value.trim();
+    imagesApiService.resetPage();
+    imagesApiService.fetchImages().then(renderGallery);
+      
     };
-function renderGallery(images){
-        const marcup = templGallery(images);
-        refs.galleryMap.innerHTML = marcup;
+function onLoadMore(){
+    imagesApiService.fetchImages().then(renderGallery)
+}    
+function renderGallery(hits){
+        refs.galleryMap.insertAdjacentHTML(`beforeend`, templGallery(hits));
     }
