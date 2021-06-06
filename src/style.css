@@ -8,13 +8,14 @@ background-color:gainsboro;
 .gallery {
     display: grid;
     width: 1200px;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    grid-auto-rows: 240px;
-    grid-gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    grid-auto-rows: 260px;
+    grid-gap: 32px;
     padding: 0;
     list-style: none;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
   }
   
   .gallery-item {
@@ -23,11 +24,11 @@ background-color:gainsboro;
       0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   }
   
-  .gallery-image:hover {
+  .photo-card:hover {
     transform: scale(1.03);
   }
   
-  .gallery-image {
+  .photo-card {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -43,4 +44,22 @@ background-color:gainsboro;
   .gallery-link:hover {
     cursor: zoom-in;
   }
-  
+  .load-more{
+    display: flex;
+    background-color: dodgerblue;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+  .stats{
+    display: flex;
+  }
+  .stats-item{
+    display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 30px;
+  justify-content: flex-start;
+  }
