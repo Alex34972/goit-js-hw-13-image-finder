@@ -1,6 +1,7 @@
 import templGallery from "../templates/gallery-images.hbs";
 import ImagesApiService from "./apiService";
 
+
 const refs = {
   input: document.querySelector(".search-form"),
   galleryMap: document.querySelector(".gallery"),
