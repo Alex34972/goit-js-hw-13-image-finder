@@ -8,7 +8,7 @@ background-color:gainsboro;
 .gallery {
     display: grid;
     width: 1200px;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    grid-template-columns: repeat( auto-fill,minmax(370px, 1fr));
     grid-auto-rows: 260px;
     grid-gap: 32px;
     padding: 0;
@@ -44,7 +44,7 @@ background-color:gainsboro;
   .gallery-link:hover {
     cursor: zoom-in;
   }
-  .load-more{
+  .Btn{
     display: flex;
     background-color: dodgerblue;
     border-radius: 4px;
@@ -54,6 +54,7 @@ background-color:gainsboro;
   }
   .stats{
     display: flex;
+    background-color: gold;
   }
   .stats-item{
     display: flex;
