@@ -26,11 +26,12 @@ function onLoadMore() {
   }
 }
 function renderGallery(hits) {
+  let last = '';
   refs.galleryMap.insertAdjacentHTML(`beforeend`, templGallery(hits));
- let last = refs.galleryMap.lastElementChild;
+  last = refs.galleryMap.lastElementChild;
   last.scrollIntoView({
     behavior: 'smooth',
-    block: "start"
+    block: "end"
   });
   if (hits.length<12) {
     refs.loadMorBtn.classList.add(`is-hidden`)
