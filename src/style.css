@@ -52,6 +52,9 @@ background-color:gainsboro;
     margin-right: auto;
     margin-top: 40px;
   }
+  .Btn.is-hidden{
+    opacity:0 ;
+  }
   .stats{
     display: flex;
     background-color: gold;
